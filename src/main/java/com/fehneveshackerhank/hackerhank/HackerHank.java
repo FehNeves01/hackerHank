@@ -18,6 +18,11 @@ import java.util.List;
 public class HackerHank {
 
     public static void main(String[] args) {
+        numeroParDeCores();
+
+    }
+
+    private static void numeroParDeCores() {
         List<Integer> b = preparandoLista();
         List<Integer> a = removeDuplicatas(b);
         int contagem = 0;
@@ -27,7 +32,7 @@ public class HackerHank {
             if (b.contains(a.get(i))) {
                 for (int idx = 0; idx < b.size(); idx++) {
 
-                    if (a.get(i) == b.get(idx)) {
+                    if (a.get(i).equals(b.get(idx))) {
                         contagemMesmoElemento += 1;
                     }
                 }
@@ -37,14 +42,13 @@ public class HackerHank {
                     contagemMesmoElemento -= 1;
                     contagem += contagemMesmoElemento / 2;
                 }
-                contagemMesmoElemento = 0;
+                // contagemMesmoElemento = 0;
 
-            };
+            }
 
         }
 
         System.out.println(contagem);
-
     }
 
     private static List<Integer> preparandoLista() {
